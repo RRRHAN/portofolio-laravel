@@ -1,5 +1,14 @@
 <html lang="en-US" style="scroll-behavior: smooth" data-rh="lang" class="dark">
   <head>
+    <style>
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+    </style>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />

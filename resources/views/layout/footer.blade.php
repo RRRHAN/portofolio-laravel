@@ -1,4 +1,4 @@
-<footer class="bg-dark pt-24 pb-6">
+<footer class="bg-slate-900 pt-24 pb-6">
         <div class="container lg:m-10">
           <div class="flex flex-wrap">
             <div class="w-full px-4 mb-12 text-slate-500 font-medium md:w-1/3">
@@ -18,28 +18,28 @@
                 <li>
                   <a
                     href="https://www.instagram.com/raihan.firm"
-                    class="inline-block text-base hover:text-primary mb-3"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
                     >Instagram</a
                   >
                 </li>
                 <li>
                   <a
                     href="https://www.linkedin.com/in/rrhan/"
-                    class="inline-block text-base hover:text-primary mb-3"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
                     >Linkedin</a
                   >
                 </li>
                 <li>
                   <a
                     href="https://github.com/RRRHAN"
-                    class="inline-block text-base hover:text-primary mb-3"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
                     >Github</a
                   >
                 </li>
                 <li>
                   <a
                     href="mailto:raihan.firmansy@gmail.com"
-                    class="inline-block text-base hover:text-primary mb-3"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
                     >Mail</a
                   >
                 </li>
@@ -51,29 +51,15 @@
                 <li>
                   <a
                     href="#home"
-                    class="inline-block text-base hover:text-primary mb-3"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
                     >Home</a
                   >
                 </li>
                 <li>
                   <a
                     href="#about"
-                    class="inline-block text-base hover:text-primary mb-3"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
                     >About</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#certification"
-                    class="inline-block text-base hover:text-primary mb-3"
-                    >Certification</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    class="inline-block text-base hover:text-primary mb-3"
-                    >Contact</a
                   >
                 </li>
               </ul>
