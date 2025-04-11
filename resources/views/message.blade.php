@@ -1,8 +1,10 @@
 <section id="message" class="pt-36 pb-16 bg-slate-900">
     <div class="max-w-7xl mx-auto p-6">
+        @if(count($messages) > 0)
         <h4 class="font-bold uppercase text-cyan-700 text-lg mb-3">
             Message
         </h4>
+        @endif
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto pr-2">
             @foreach($messages as $message)
