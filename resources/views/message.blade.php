@@ -21,7 +21,7 @@
                 <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative">
                     <button onclick="document.getElementById('message-modal-{{ $message->id }}').classList.add('hidden')" class="absolute top-3 right-3 text-slate-500 hover:text-slate-800 text-xl font-bold">&times;</button>
 
-                    <h2 class="text-2xl font-semibold mb-4 text-slate-800">Send a Message</h2>
+                    <h2 class="text-2xl font-semibold mb-4 text-slate-800">Update Message</h2>
                     <form class="space-y-4" action="/message/{{ $message->id }}" method="POST">
                         @csrf
                         @method('PUT')
