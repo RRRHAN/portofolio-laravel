@@ -32,6 +32,13 @@
                       >About</a
                     >
                   </li>
+                  <li class="group">
+                    <a
+                      href="#message"
+                      class="text-base text-dark py-2 mx-8 flex group-hover:text-cyan-700 text-white"
+                      >Message</a
+                    >
+                  </li>
                 </ul>
               </nav>
             </div>

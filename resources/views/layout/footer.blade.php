@@ -62,6 +62,13 @@
                     >About</a
                   >
                 </li>
+                <li>
+                  <a
+                    href="#message"
+                    class="inline-block text-base hover:text-cyan-700 mb-3"
+                    >Message</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
