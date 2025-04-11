@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Message;
 
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class MainController extends Controller
     public function main()
     {
         $messages = Message::all();
-        return view("main",compact('messages'));
+        return view("main", compact('messages'));
     }
 
 
@@ -31,16 +32,24 @@ class MainController extends Controller
     }
 
     public function updateMessage(Request $request, $id)
-{
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email',
-        'message' => 'required|string',
-    ]);
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
 
-    $message = Message::findOrFail($id);
-    $message->update($validated);
+        $message = Message::findOrFail($id);
+        $message->update($validated);
 
-    return redirect('/#message')->with('success', 'Message updated!');
-}
+        return redirect('/#message')->with('success', 'Message updated!');
+    }
+
+    public function deleteMessage($id)
+    {
+        $message = Message::findOrFail($id);
+        $message->delete();
+
+        return redirect('/#message')->with('success', 'Message deleted!');
+    }
 }

@@ -15,35 +15,40 @@
             </div>
 
             <!-- edit/delete modal -->
-            <div  id="message-modal-{{ $message->id }}" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-            <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative">
-                <button onclick="document.getElementById('message-modal-{{ $message->id }}').classList.add('hidden')" class="absolute top-3 right-3 text-slate-500 hover:text-slate-800 text-xl font-bold">&times;</button>
+            <div id="message-modal-{{ $message->id }}" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative">
+                    <button onclick="document.getElementById('message-modal-{{ $message->id }}').classList.add('hidden')" class="absolute top-3 right-3 text-slate-500 hover:text-slate-800 text-xl font-bold">&times;</button>
 
-                <h2 class="text-2xl font-semibold mb-4 text-slate-800">Send a Message</h2>
-                <form class="space-y-4" action="/message/{{ $message->id }}" method="POST">
-                @csrf
-                @method('PUT')
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700">Name</label>
-                        <input type="text" name="name" placeholder="Your name" value="{{ $message->name }}" class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600" />
-                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-slate-800">Send a Message</h2>
+                    <form class="space-y-4" action="/message/{{ $message->id }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Name</label>
+                            <input type="text" name="name" placeholder="Your name" value="{{ $message->name }}" class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600" />
+                        </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700">Email</label>
-                        <input type="email" name="email" value="{{ $message->email }}" placeholder="you@example.com" class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600" />
-                    </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Email</label>
+                            <input type="email" name="email" value="{{ $message->email }}" placeholder="you@example.com" class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600" />
+                        </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700">Message</label>
-                        <textarea name="message" rows="4" placeholder="Your message..." class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600">{{ old('message', $message->message) }}</textarea>
-                    </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Message</label>
+                            <textarea name="message" rows="4" placeholder="Your message..." class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600">{{ old('message', $message->message) }}</textarea>
+                        </div>
 
-                    <button type="submit" class="w-full bg-cyan-700 hover:bg-cyan-800 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
-                        Update
-                    </button>
-                </form>
+                        <button type="submit" class="w-full bg-cyan-700 hover:bg-cyan-800 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
+                            Update
+                        </button>
+                    </form>
+                    <form action="/message/{{ $message->id }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Are you sure?')" class="mt-5 w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">Delete</button>
+                    </form>
+                </div>
             </div>
-        </div>
 
             @endforeach
         </div>
@@ -61,7 +66,7 @@
 
                 <h2 class="text-2xl font-semibold mb-4 text-slate-800">Send a Message</h2>
                 <form class="space-y-4" action="/message" method="POST">
-                @csrf
+                    @csrf
                     <div>
                         <label class="block text-sm font-medium text-slate-700">Name</label>
                         <input type="text" name="name" placeholder="Your name" class="mt-1 block w-full rounded-xl border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600" />
