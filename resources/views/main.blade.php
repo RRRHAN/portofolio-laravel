@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('container')
-@include('layout.hero') 
-@include('layout.about') 
+@include('hero') 
+@include('about') 
+@include('message') 
 @stop
