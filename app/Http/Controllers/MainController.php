@@ -29,4 +29,18 @@ class MainController extends Controller
 
         return redirect('/#message')->with('success', 'Message sent!');
     }
+
+    public function updateMessage(Request $request, $id)
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email',
+        'message' => 'required|string',
+    ]);
+
+    $message = Message::findOrFail($id);
+    $message->update($validated);
+
+    return redirect('/#message')->with('success', 'Message updated!');
+}
 }
